@@ -1,0 +1,125 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #1a1a2e;
+    color: #e0e0e0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: url('./public/bg.jpg') bottom / cover no-repeat;
+    opacity: 0.12;
+    pointer-events: none;
+}
+
+.wrap {
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.pfp {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #444;
+}
+
+.info h1 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #f0f0f0;
+    letter-spacing: -0.3px;
+}
+
+.tagline {
+    font-size: 12px;
+    color: #888;
+    margin-top: 2px;
+}
+
+.nav {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #2a2a3e;
+    padding-bottom: 10px;
+}
+
+.nav-item {
+    color: #666;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 5px 12px;
+    border-radius: 4px;
+    transition: color 0.15s;
+}
+
+.nav-item:hover { color: #bbb; }
+.nav-item.active {
+    color: #e0e0e0;
+    background: #2a2a3e;
+}
+
+.links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: #222236;
+    color: #ccc;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    border: 1px solid #2e2e44;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.links a:hover {
+    background: #2a2a42;
+    border-color: #444;
+    color: #fff;
+}
+
+.links svg { opacity: 0.6; flex-shrink: 0; }
+.links a:hover svg { opacity: 0.9; }
+
+.credit {
+    position: fixed;
+    bottom: 8px;
+    right: 12px;
+    font-size: 10px;
+    color: #444;
+}
+
+@media (max-width: 480px) {
+    .pfp { width: 48px; height: 48px; }
+    .info h1 { font-size: 15px; }
+    .links a { padding: 11px 14px; font-size: 13px; }
+}
+
